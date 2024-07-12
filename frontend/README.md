@@ -35,4 +35,4 @@ Uma vez criada a imagem, para executar o contêiner, basta executar, **como admi
 $ docker-compose up
 ```
 
-Para acessar a aplicação, abra [http://localhost:8080/views/index.html](http://localhost:8080/views/index.html) no navegador.
+Para acessar a aplicação, abra [http://localhost:80/index.html](http://localhost:80/index.html) no navegador.
