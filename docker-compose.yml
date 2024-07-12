@@ -1,0 +1,14 @@
+services:
+  flask-app:
+    build:
+      context: backend\api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+
+  front-app:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
