@@ -1,0 +1,70 @@
+[2024-07-11 17:20:21,077] ERROR Exception on /tickets [GET] - call_trace=C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\flask\app.py L838 
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\app.py", line 79, in get_tickets
+    tickets = session.query(Ticket).all()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2095, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3276, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3300, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 168, in _do_get
+    raise exc.TimeoutError(
+sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
+[2024-07-11 17:20:21,112] INFO 127.0.0.1 - - [11/Jul/2024 17:20:21] "[35m[1mGET /tickets HTTP/1.1[0m" 500 - - call_trace=C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:20:35,714] INFO 127.0.0.1 - - [11/Jul/2024 17:20:35] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:20:36,036] INFO Coletando tickets  - call_trace=C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\app.py L75  
+[2024-07-11 17:21:05,213] INFO Adicionando Ticket de nome: 'testes' - call_trace=C:\Users\Administrator\Documents\Service-Form-integration-backend-endpoints-in-frontend\Service-Form-integration-backend-endpoints-in-frontend\backend\api\app.py L43  
